@@ -1,7 +1,7 @@
 #
 # Aeca
 #
-# Copyright (c) 2024 Aeca, Inc.
+# Copyright (c) 2025 Cognica, Inc.
 #
 
 # pylint: disable=invalid-name

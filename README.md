@@ -1,11 +1,11 @@
-# Aeca Python Client
+# Cognica Python Client
 
-A Python client for Aeca database server.
+A Python client for Cognica database server.
 
 ## Installation
 
 ```bash
-$ pip install aeca
+$ pip install cognica
 ```
 
 ## Current Status
@@ -15,19 +15,19 @@ The current version is fully functional and stable for the production environmen
 ### Current Version
 
 ```python
-import aeca
+import cognica
 
 # Establish connection to a local database server.
-channel = aeca.Channel("localhost", 10080)
+channel = cognica.Channel("localhost", 10080)
 
 # List collections.
-db = aeca.DocumentDB(channel)
+db = cognica.DocumentDB(channel)
 collections = db.list_collections()
 for collection in collections:
     print(collection)
 
 # Find a specific document in the Wikipedia collection.
-collection = aeca.find_collection("Wikipedia")
+collection = db.find_collection("Wikipedia")
 df = collection.find({
     "page_id": 42
 }, to_pandas=True)
@@ -37,13 +37,13 @@ print(df)
 ### Next Version (Work in progress)
 
 ```python
-import aeca
+import cognica
 
 # Establish connection to a local database server.
-channel = aeca.Channel("localhost", 10080)
+channel = cognica.Channel("localhost", 10080)
 
 # Login to the database.
-ws = aeca.Workspaces(channel, "user_id", "password")
+ws = cognica.Workspaces(channel, "user_id", "password")
 
 # List workspaces.
 workspaces = ws.list_workspaces()
@@ -52,13 +52,13 @@ for workspace in workspaces:
 
 # Open the workspace and list the collections.
 workspace = ws.find_workspace("test")
-db = aeca.DocumentDB(workspace)
+db = cognica.DocumentDB(workspace)
 collections = db.list_collections()
 for collection in collections:
     print(collection)
 
 # Find a specific document in the Wikipedia collection.
-collection = aeca.find_collection("Wikipedia")
+collection = db.find_collection("Wikipedia")
 df = collection.find({
     "page_id": 42
 }, to_pandas=True)

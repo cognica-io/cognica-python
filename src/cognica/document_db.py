@@ -1,7 +1,7 @@
 #
 # Aeca
 #
-# Copyright (c) 2024 Aeca, Inc.
+# Copyright (c) 2025 Cognica, Inc.
 #
 
 # pylint: disable=no-member,missing-module-docstring,missing-class-docstring,missing-function-docstring
@@ -21,8 +21,8 @@ import polars as pl
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from aeca.channel import Channel
-from aeca.protobuf import document_pb2, document_db_pb2, document_db_pb2_grpc
+from cognica.channel import Channel
+from cognica.protobuf import document_pb2, document_db_pb2, document_db_pb2_grpc
 
 
 messages: t.TypeAlias = document_db_pb2  # type: ignore

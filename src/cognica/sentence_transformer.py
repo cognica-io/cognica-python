@@ -1,7 +1,7 @@
 #
 # Aeca
 #
-# Copyright (c) 2024 Aeca, Inc.
+# Copyright (c) 2025 Cognica, Inc.
 #
 
 # pylint: disable=no-member,broad-exception-caught
@@ -17,8 +17,8 @@ import grpc
 import numpy as np
 from PIL import Image
 
-from aeca.channel import Channel
-from aeca.protobuf import (
+from cognica.channel import Channel
+from cognica.protobuf import (
     sentence_transformer_pb2,
     sentence_transformer_pb2_grpc,
 )

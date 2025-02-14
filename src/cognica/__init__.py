@@ -1,22 +1,22 @@
 #
 # Aeca
 #
-# Copyright (c) 2024 Aeca, Inc.
+# Copyright (c) 2025 Cognica, Inc.
 #
 
 # pylint: disable=missing-module-docstring
 
-from aeca.channel import Channel
-from aeca.document_db import DocumentDB
-from aeca.fts_analysis_pipeline import FTSAnalysisPipeline
-from aeca.key_value_db import KeyValueDB, KeyspaceManager
-from aeca.sentence_transformer import (
+from cognica.channel import Channel
+from cognica.document_db import DocumentDB
+from cognica.fts_analysis_pipeline import FTSAnalysisPipeline
+from cognica.key_value_db import KeyValueDB, KeyspaceManager
+from cognica.sentence_transformer import (
     SentenceTransformerEncoder,
     SentenceTransformerCrossEncoder,
     SentenceTransformerCLIPEncoder,
     SentenceTransformerQAEncoder,
 )
-from aeca.system_metrics import SystemMetrics
+from cognica.system_metrics import SystemMetrics
 
 
 __all__ = [

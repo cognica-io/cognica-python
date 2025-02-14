@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import aeca.protobuf.key_value_db_pb2 as key__value__db__pb2
+import cognica.protobuf.key_value_db_pb2 as key__value__db__pb2
 
 GRPC_GENERATED_VERSION = '1.64.1'
 GRPC_VERSION = grpc.__version__
@@ -40,37 +40,37 @@ class KeyValueDBServiceStub(object):
             channel: A grpc.Channel.
         """
         self.put = channel.unary_unary(
-                '/aeca.rpc.db.kv.KeyValueDBService/put',
+                '/cognica.rpc.db.kv.KeyValueDBService/put',
                 request_serializer=key__value__db__pb2.PutRequest.SerializeToString,
                 response_deserializer=key__value__db__pb2.PutResponse.FromString,
                 _registered_method=True)
         self.remove = channel.unary_unary(
-                '/aeca.rpc.db.kv.KeyValueDBService/remove',
+                '/cognica.rpc.db.kv.KeyValueDBService/remove',
                 request_serializer=key__value__db__pb2.RemoveRequest.SerializeToString,
                 response_deserializer=key__value__db__pb2.RemoveResponse.FromString,
                 _registered_method=True)
         self.get = channel.unary_unary(
-                '/aeca.rpc.db.kv.KeyValueDBService/get',
+                '/cognica.rpc.db.kv.KeyValueDBService/get',
                 request_serializer=key__value__db__pb2.GetRequest.SerializeToString,
                 response_deserializer=key__value__db__pb2.GetResponse.FromString,
                 _registered_method=True)
         self.mget = channel.unary_unary(
-                '/aeca.rpc.db.kv.KeyValueDBService/mget',
+                '/cognica.rpc.db.kv.KeyValueDBService/mget',
                 request_serializer=key__value__db__pb2.MultiGetRequest.SerializeToString,
                 response_deserializer=key__value__db__pb2.MultiGetResponse.FromString,
                 _registered_method=True)
         self.put_batch = channel.unary_unary(
-                '/aeca.rpc.db.kv.KeyValueDBService/put_batch',
+                '/cognica.rpc.db.kv.KeyValueDBService/put_batch',
                 request_serializer=key__value__db__pb2.BatchedPutRequest.SerializeToString,
                 response_deserializer=key__value__db__pb2.BatchedPutResponse.FromString,
                 _registered_method=True)
         self.remove_batch = channel.unary_unary(
-                '/aeca.rpc.db.kv.KeyValueDBService/remove_batch',
+                '/cognica.rpc.db.kv.KeyValueDBService/remove_batch',
                 request_serializer=key__value__db__pb2.BatchedRemoveRequest.SerializeToString,
                 response_deserializer=key__value__db__pb2.BatchedRemoveResponse.FromString,
                 _registered_method=True)
         self.get_batch = channel.unary_unary(
-                '/aeca.rpc.db.kv.KeyValueDBService/get_batch',
+                '/cognica.rpc.db.kv.KeyValueDBService/get_batch',
                 request_serializer=key__value__db__pb2.BatchedGetRequest.SerializeToString,
                 response_deserializer=key__value__db__pb2.BatchedGetResponse.FromString,
                 _registered_method=True)
@@ -161,9 +161,9 @@ def add_KeyValueDBServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'aeca.rpc.db.kv.KeyValueDBService', rpc_method_handlers)
+            'cognica.rpc.db.kv.KeyValueDBService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('aeca.rpc.db.kv.KeyValueDBService', rpc_method_handlers)
+    server.add_registered_method_handlers('cognica.rpc.db.kv.KeyValueDBService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -184,7 +184,7 @@ class KeyValueDBService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.kv.KeyValueDBService/put',
+            '/cognica.rpc.db.kv.KeyValueDBService/put',
             key__value__db__pb2.PutRequest.SerializeToString,
             key__value__db__pb2.PutResponse.FromString,
             options,
@@ -211,7 +211,7 @@ class KeyValueDBService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.kv.KeyValueDBService/remove',
+            '/cognica.rpc.db.kv.KeyValueDBService/remove',
             key__value__db__pb2.RemoveRequest.SerializeToString,
             key__value__db__pb2.RemoveResponse.FromString,
             options,
@@ -238,7 +238,7 @@ class KeyValueDBService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.kv.KeyValueDBService/get',
+            '/cognica.rpc.db.kv.KeyValueDBService/get',
             key__value__db__pb2.GetRequest.SerializeToString,
             key__value__db__pb2.GetResponse.FromString,
             options,
@@ -265,7 +265,7 @@ class KeyValueDBService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.kv.KeyValueDBService/mget',
+            '/cognica.rpc.db.kv.KeyValueDBService/mget',
             key__value__db__pb2.MultiGetRequest.SerializeToString,
             key__value__db__pb2.MultiGetResponse.FromString,
             options,
@@ -292,7 +292,7 @@ class KeyValueDBService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.kv.KeyValueDBService/put_batch',
+            '/cognica.rpc.db.kv.KeyValueDBService/put_batch',
             key__value__db__pb2.BatchedPutRequest.SerializeToString,
             key__value__db__pb2.BatchedPutResponse.FromString,
             options,
@@ -319,7 +319,7 @@ class KeyValueDBService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.kv.KeyValueDBService/remove_batch',
+            '/cognica.rpc.db.kv.KeyValueDBService/remove_batch',
             key__value__db__pb2.BatchedRemoveRequest.SerializeToString,
             key__value__db__pb2.BatchedRemoveResponse.FromString,
             options,
@@ -346,7 +346,7 @@ class KeyValueDBService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.kv.KeyValueDBService/get_batch',
+            '/cognica.rpc.db.kv.KeyValueDBService/get_batch',
             key__value__db__pb2.BatchedGetRequest.SerializeToString,
             key__value__db__pb2.BatchedGetResponse.FromString,
             options,
@@ -370,22 +370,22 @@ class KeyspaceManagerServiceStub(object):
             channel: A grpc.Channel.
         """
         self.create_keyspace = channel.unary_unary(
-                '/aeca.rpc.db.kv.KeyspaceManagerService/create_keyspace',
+                '/cognica.rpc.db.kv.KeyspaceManagerService/create_keyspace',
                 request_serializer=key__value__db__pb2.CreateKeyspaceRequest.SerializeToString,
                 response_deserializer=key__value__db__pb2.CreateKeyspaceResponse.FromString,
                 _registered_method=True)
         self.drop_keyspace = channel.unary_unary(
-                '/aeca.rpc.db.kv.KeyspaceManagerService/drop_keyspace',
+                '/cognica.rpc.db.kv.KeyspaceManagerService/drop_keyspace',
                 request_serializer=key__value__db__pb2.DropKeyspaceRequest.SerializeToString,
                 response_deserializer=key__value__db__pb2.DropKeyspaceResponse.FromString,
                 _registered_method=True)
         self.truncate_keyspace = channel.unary_unary(
-                '/aeca.rpc.db.kv.KeyspaceManagerService/truncate_keyspace',
+                '/cognica.rpc.db.kv.KeyspaceManagerService/truncate_keyspace',
                 request_serializer=key__value__db__pb2.TruncateKeyspaceRequest.SerializeToString,
                 response_deserializer=key__value__db__pb2.TruncateKeyspaceResponse.FromString,
                 _registered_method=True)
         self.list_keyspaces = channel.unary_unary(
-                '/aeca.rpc.db.kv.KeyspaceManagerService/list_keyspaces',
+                '/cognica.rpc.db.kv.KeyspaceManagerService/list_keyspaces',
                 request_serializer=key__value__db__pb2.ListKeyspacesRequest.SerializeToString,
                 response_deserializer=key__value__db__pb2.ListKeyspacesResponse.FromString,
                 _registered_method=True)
@@ -443,9 +443,9 @@ def add_KeyspaceManagerServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'aeca.rpc.db.kv.KeyspaceManagerService', rpc_method_handlers)
+            'cognica.rpc.db.kv.KeyspaceManagerService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('aeca.rpc.db.kv.KeyspaceManagerService', rpc_method_handlers)
+    server.add_registered_method_handlers('cognica.rpc.db.kv.KeyspaceManagerService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -466,7 +466,7 @@ class KeyspaceManagerService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.kv.KeyspaceManagerService/create_keyspace',
+            '/cognica.rpc.db.kv.KeyspaceManagerService/create_keyspace',
             key__value__db__pb2.CreateKeyspaceRequest.SerializeToString,
             key__value__db__pb2.CreateKeyspaceResponse.FromString,
             options,
@@ -493,7 +493,7 @@ class KeyspaceManagerService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.kv.KeyspaceManagerService/drop_keyspace',
+            '/cognica.rpc.db.kv.KeyspaceManagerService/drop_keyspace',
             key__value__db__pb2.DropKeyspaceRequest.SerializeToString,
             key__value__db__pb2.DropKeyspaceResponse.FromString,
             options,
@@ -520,7 +520,7 @@ class KeyspaceManagerService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.kv.KeyspaceManagerService/truncate_keyspace',
+            '/cognica.rpc.db.kv.KeyspaceManagerService/truncate_keyspace',
             key__value__db__pb2.TruncateKeyspaceRequest.SerializeToString,
             key__value__db__pb2.TruncateKeyspaceResponse.FromString,
             options,
@@ -547,7 +547,7 @@ class KeyspaceManagerService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.kv.KeyspaceManagerService/list_keyspaces',
+            '/cognica.rpc.db.kv.KeyspaceManagerService/list_keyspaces',
             key__value__db__pb2.ListKeyspacesRequest.SerializeToString,
             key__value__db__pb2.ListKeyspacesResponse.FromString,
             options,

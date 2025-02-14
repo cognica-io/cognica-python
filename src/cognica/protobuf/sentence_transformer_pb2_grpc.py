@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import aeca.protobuf.sentence_transformer_pb2 as sentence__transformer__pb2
+import cognica.protobuf.sentence_transformer_pb2 as sentence__transformer__pb2
 
 GRPC_GENERATED_VERSION = '1.64.1'
 GRPC_VERSION = grpc.__version__
@@ -40,7 +40,7 @@ class SentenceTransformerServiceStub(object):
             channel: A grpc.Channel.
         """
         self.encode = channel.unary_unary(
-                '/aeca.rpc.sentence_transformer.SentenceTransformerService/encode',
+                '/cognica.rpc.sentence_transformer.SentenceTransformerService/encode',
                 request_serializer=sentence__transformer__pb2.SentenceEncoderRequest.SerializeToString,
                 response_deserializer=sentence__transformer__pb2.SentenceEncoderResponse.FromString,
                 _registered_method=True)
@@ -65,9 +65,9 @@ def add_SentenceTransformerServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'aeca.rpc.sentence_transformer.SentenceTransformerService', rpc_method_handlers)
+            'cognica.rpc.sentence_transformer.SentenceTransformerService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('aeca.rpc.sentence_transformer.SentenceTransformerService', rpc_method_handlers)
+    server.add_registered_method_handlers('cognica.rpc.sentence_transformer.SentenceTransformerService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -88,7 +88,7 @@ class SentenceTransformerService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.sentence_transformer.SentenceTransformerService/encode',
+            '/cognica.rpc.sentence_transformer.SentenceTransformerService/encode',
             sentence__transformer__pb2.SentenceEncoderRequest.SerializeToString,
             sentence__transformer__pb2.SentenceEncoderResponse.FromString,
             options,
@@ -112,7 +112,7 @@ class CrossEncoderServiceStub(object):
             channel: A grpc.Channel.
         """
         self.predict = channel.unary_unary(
-                '/aeca.rpc.sentence_transformer.CrossEncoderService/predict',
+                '/cognica.rpc.sentence_transformer.CrossEncoderService/predict',
                 request_serializer=sentence__transformer__pb2.CrossEncoderRequest.SerializeToString,
                 response_deserializer=sentence__transformer__pb2.CrossEncoderResponse.FromString,
                 _registered_method=True)
@@ -137,9 +137,9 @@ def add_CrossEncoderServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'aeca.rpc.sentence_transformer.CrossEncoderService', rpc_method_handlers)
+            'cognica.rpc.sentence_transformer.CrossEncoderService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('aeca.rpc.sentence_transformer.CrossEncoderService', rpc_method_handlers)
+    server.add_registered_method_handlers('cognica.rpc.sentence_transformer.CrossEncoderService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -160,7 +160,7 @@ class CrossEncoderService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.sentence_transformer.CrossEncoderService/predict',
+            '/cognica.rpc.sentence_transformer.CrossEncoderService/predict',
             sentence__transformer__pb2.CrossEncoderRequest.SerializeToString,
             sentence__transformer__pb2.CrossEncoderResponse.FromString,
             options,
@@ -184,7 +184,7 @@ class CLIPEncoderServiceStub(object):
             channel: A grpc.Channel.
         """
         self.encode = channel.unary_unary(
-                '/aeca.rpc.sentence_transformer.CLIPEncoderService/encode',
+                '/cognica.rpc.sentence_transformer.CLIPEncoderService/encode',
                 request_serializer=sentence__transformer__pb2.CLIPEncoderRequest.SerializeToString,
                 response_deserializer=sentence__transformer__pb2.CLIPEncoderResponse.FromString,
                 _registered_method=True)
@@ -209,9 +209,9 @@ def add_CLIPEncoderServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'aeca.rpc.sentence_transformer.CLIPEncoderService', rpc_method_handlers)
+            'cognica.rpc.sentence_transformer.CLIPEncoderService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('aeca.rpc.sentence_transformer.CLIPEncoderService', rpc_method_handlers)
+    server.add_registered_method_handlers('cognica.rpc.sentence_transformer.CLIPEncoderService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -232,7 +232,7 @@ class CLIPEncoderService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.sentence_transformer.CLIPEncoderService/encode',
+            '/cognica.rpc.sentence_transformer.CLIPEncoderService/encode',
             sentence__transformer__pb2.CLIPEncoderRequest.SerializeToString,
             sentence__transformer__pb2.CLIPEncoderResponse.FromString,
             options,
@@ -256,7 +256,7 @@ class QAEncoderServiceStub(object):
             channel: A grpc.Channel.
         """
         self.predict = channel.unary_unary(
-                '/aeca.rpc.sentence_transformer.QAEncoderService/predict',
+                '/cognica.rpc.sentence_transformer.QAEncoderService/predict',
                 request_serializer=sentence__transformer__pb2.QAEncoderRequest.SerializeToString,
                 response_deserializer=sentence__transformer__pb2.QAEncoderResponse.FromString,
                 _registered_method=True)
@@ -281,9 +281,9 @@ def add_QAEncoderServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'aeca.rpc.sentence_transformer.QAEncoderService', rpc_method_handlers)
+            'cognica.rpc.sentence_transformer.QAEncoderService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('aeca.rpc.sentence_transformer.QAEncoderService', rpc_method_handlers)
+    server.add_registered_method_handlers('cognica.rpc.sentence_transformer.QAEncoderService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -304,7 +304,7 @@ class QAEncoderService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.sentence_transformer.QAEncoderService/predict',
+            '/cognica.rpc.sentence_transformer.QAEncoderService/predict',
             sentence__transformer__pb2.QAEncoderRequest.SerializeToString,
             sentence__transformer__pb2.QAEncoderResponse.FromString,
             options,

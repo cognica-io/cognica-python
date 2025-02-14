@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import aeca.protobuf.fts_analysis_pipeline_pb2 as fts__analysis__pipeline__pb2
+import cognica.protobuf.fts_analysis_pipeline_pb2 as fts__analysis__pipeline__pb2
 
 GRPC_GENERATED_VERSION = '1.64.1'
 GRPC_VERSION = grpc.__version__
@@ -40,12 +40,12 @@ class FTSAnalysisPipelineServiceStub(object):
             channel: A grpc.Channel.
         """
         self.execute = channel.unary_unary(
-                '/aeca.rpc.db.fts.FTSAnalysisPipelineService/execute',
+                '/cognica.rpc.db.fts.FTSAnalysisPipelineService/execute',
                 request_serializer=fts__analysis__pipeline__pb2.PipelineExecutionRequest.SerializeToString,
                 response_deserializer=fts__analysis__pipeline__pb2.PipelineExecutionResponse.FromString,
                 _registered_method=True)
         self.execute_adhoc = channel.unary_unary(
-                '/aeca.rpc.db.fts.FTSAnalysisPipelineService/execute_adhoc',
+                '/cognica.rpc.db.fts.FTSAnalysisPipelineService/execute_adhoc',
                 request_serializer=fts__analysis__pipeline__pb2.AdhocPipelineExecutionRequest.SerializeToString,
                 response_deserializer=fts__analysis__pipeline__pb2.AdhocPipelineExecutionResponse.FromString,
                 _registered_method=True)
@@ -81,9 +81,9 @@ def add_FTSAnalysisPipelineServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'aeca.rpc.db.fts.FTSAnalysisPipelineService', rpc_method_handlers)
+            'cognica.rpc.db.fts.FTSAnalysisPipelineService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('aeca.rpc.db.fts.FTSAnalysisPipelineService', rpc_method_handlers)
+    server.add_registered_method_handlers('cognica.rpc.db.fts.FTSAnalysisPipelineService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -104,7 +104,7 @@ class FTSAnalysisPipelineService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.fts.FTSAnalysisPipelineService/execute',
+            '/cognica.rpc.db.fts.FTSAnalysisPipelineService/execute',
             fts__analysis__pipeline__pb2.PipelineExecutionRequest.SerializeToString,
             fts__analysis__pipeline__pb2.PipelineExecutionResponse.FromString,
             options,
@@ -131,7 +131,7 @@ class FTSAnalysisPipelineService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.db.fts.FTSAnalysisPipelineService/execute_adhoc',
+            '/cognica.rpc.db.fts.FTSAnalysisPipelineService/execute_adhoc',
             fts__analysis__pipeline__pb2.AdhocPipelineExecutionRequest.SerializeToString,
             fts__analysis__pipeline__pb2.AdhocPipelineExecutionResponse.FromString,
             options,

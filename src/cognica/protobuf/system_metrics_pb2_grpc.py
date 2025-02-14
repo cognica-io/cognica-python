@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import aeca.protobuf.system_metrics_pb2 as system__metrics__pb2
+import cognica.protobuf.system_metrics_pb2 as system__metrics__pb2
 
 GRPC_GENERATED_VERSION = '1.64.1'
 GRPC_VERSION = grpc.__version__
@@ -40,7 +40,7 @@ class SystemMetricsServiceStub(object):
             channel: A grpc.Channel.
         """
         self.get_snapshot = channel.unary_unary(
-                '/aeca.rpc.SystemMetricsService/get_snapshot',
+                '/cognica.rpc.SystemMetricsService/get_snapshot',
                 request_serializer=system__metrics__pb2.GetSystemMetricsSnapshotRequest.SerializeToString,
                 response_deserializer=system__metrics__pb2.GetSystemMetricsSnapshotResponse.FromString,
                 _registered_method=True)
@@ -65,9 +65,9 @@ def add_SystemMetricsServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'aeca.rpc.SystemMetricsService', rpc_method_handlers)
+            'cognica.rpc.SystemMetricsService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('aeca.rpc.SystemMetricsService', rpc_method_handlers)
+    server.add_registered_method_handlers('cognica.rpc.SystemMetricsService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -88,7 +88,7 @@ class SystemMetricsService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/aeca.rpc.SystemMetricsService/get_snapshot',
+            '/cognica.rpc.SystemMetricsService/get_snapshot',
             system__metrics__pb2.GetSystemMetricsSnapshotRequest.SerializeToString,
             system__metrics__pb2.GetSystemMetricsSnapshotResponse.FromString,
             options,
