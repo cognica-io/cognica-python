@@ -15,15 +15,13 @@ import time
 import typing as t
 
 import grpc
-
 import pandas as pd
 import polars as pl
 import pyarrow as pa
 import pyarrow.parquet as pq
 
 from cognica.channel import Channel
-from cognica.protobuf import document_pb2, document_db_pb2, document_db_pb2_grpc
-
+from cognica.protobuf import document_db_pb2, document_db_pb2_grpc, document_pb2
 
 messages: t.TypeAlias = document_db_pb2  # type: ignore
 
@@ -76,12 +74,8 @@ DropCollectionRequest: t.TypeAlias = messages.DropCollectionRequest  # type: ign
 DropCollectionResponse: t.TypeAlias = messages.DropCollectionResponse  # type: ignore
 RenameCollectionRequest: t.TypeAlias = messages.RenameCollectionRequest  # type: ignore
 RenameCollectionResponse: t.TypeAlias = messages.RenameCollectionResponse  # type: ignore
-TruncateCollectionRequest: t.TypeAlias = (
-    messages.TruncateCollectionRequest  # type: ignore
-)
-TruncateCollectionResponse: t.TypeAlias = (
-    messages.TruncateCollectionResponse  # type: ignore
-)
+TruncateCollectionRequest: t.TypeAlias = messages.TruncateCollectionRequest  # type: ignore
+TruncateCollectionResponse: t.TypeAlias = messages.TruncateCollectionResponse  # type: ignore
 ListCollectionsRequest: t.TypeAlias = messages.ListCollectionsRequest  # type: ignore
 ListCollectionsResponse: t.TypeAlias = messages.ListCollectionsResponse  # type: ignore
 
@@ -92,9 +86,7 @@ def _to_json(
     if isinstance(doc, document_pb2.Document):  # type: ignore
         return doc
     elif isinstance(doc, (dict, list)):
-        return document_pb2.Document(  # type: ignore
-            json=json.dumps(doc, ensure_ascii=False)
-        )
+        return document_pb2.Document(json=json.dumps(doc, ensure_ascii=False))  # type: ignore
 
     return document_pb2.Document(json=doc)  # type: ignore
 
@@ -718,7 +710,9 @@ class DocumentDB:
         if dtypes:
             for column, type_ in dtypes.items():
                 if type_ == "json" and column in df:
-                    df[column] = df[column].apply(json.loads)
+                    df[column] = df[column].apply(
+                        lambda x: json.loads(x) if isinstance(x, str) else x
+                    )
 
         return df
 
